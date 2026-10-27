@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://sd8dpotjw405"]
+
+[ext_resource type="Script" uid="uid://bmnnu4htiu6m2" path="res://node_2d.gd" id="1_epypp"]
+[ext_resource type="PackedScene" uid="uid://cwk735tti8vsf" path="res://sprite_2d.tscn" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://dhou61ypx52u3" path="res://label.gd" id="2_0e48y"]
+
+[node name="Node2D" type="Node2D" unique_id=1854405195]
+script = ExtResource("1_epypp")
+
+[node name="Sprite2D" parent="." unique_id=673068564 instance=ExtResource("1_wtcfe")]
+
+[node name="Timer" type="Timer" parent="Sprite2D" unique_id=306850007]
+autostart = true
+
+[node name="Button" type="Button" parent="." unique_id=1878085864]
+offset_left = 31.0
+offset_top = 22.0
+offset_right = 80.0
+offset_bottom = 60.0
+text = "+1"
+
+[node name="Label" type="Label" parent="." unique_id=981861144]
+offset_left = 97.0
+offset_top = 30.0
+offset_right = 137.0
+offset_bottom = 53.0
+text = "Count: 0"
+script = ExtResource("2_0e48y")
+
+[connection signal="pressed" from="Button" to="Sprite2D" method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="Label" method="_on_button_pressed"]
